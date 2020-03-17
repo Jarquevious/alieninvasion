@@ -21,7 +21,7 @@ def run_game():
     # Start the main loop for the game.
     while True:
 
-       
+       gf.check_events()
         
 
         # Redraw the screen during each pass through the loop.
