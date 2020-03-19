@@ -1,5 +1,7 @@
 import sys
 import pygame
+from bullets import Bullets
+
 
 def check_keydown_events(event, ship):
     """Repsonds to key presses."""
