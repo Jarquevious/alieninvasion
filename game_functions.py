@@ -20,9 +20,13 @@ def check_events(ship):
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            # Checks if key is pressed down    
             elif event.type == pygame.KEYDOWN:
+                # Call to the keydown function above
                 check_keydown_events(event, ship)
+            # Checks if key is not pressed    
             elif event.type == pygame.KEYUP:
+                # Call to the keyup function above
                 check_keyup_events(event, ship)
 
             
