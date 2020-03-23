@@ -3,6 +3,8 @@ class Settings():
 
     def __init__(self):
         """initialize the game's settings."""
+        # Alien settings 
+        # self.alien
         # Screen settings
         self.screen_width = 1200
         self.screen_height = 800
