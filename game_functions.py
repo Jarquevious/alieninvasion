@@ -29,7 +29,7 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False 
 
-def check_events(ai_settings, screen, ship, bullets):
+def check_events(ai_settings, screen, ship, alien, bullets):
     """Respond to key presses and mouse events."""
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -51,7 +51,6 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
         bullet.draw_bullet()
     ship.blitme()
     aliens.draw(screen)
-
 
 def update_bullets(bullets):
     """Update position of bullets and get rid of old bullets."""
@@ -89,13 +88,19 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
 def create_fleet(ai_settings, screen, ship, aliens): 
     """Create full fleet of aliens."""
     # Create an alien and find the number of aliens in a row.
+    alien = Alien(ai_settings, screen)
     number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)
     number_rows = get_number_rows(ai_settings, ship.rect.height, alien.rect.height)
-     
+   
     # Create the fleet of aliens.
     for row_number in range(number_rows):
         for alien_number in range(number_aliens_x):
             create_alien(ai_settings, screen, aliens, alien_number, row_number)
      
 # Make the most recently drawn screen visible.
-            # pygame.display.flip()
+    # pygame.display.flip()
+
+def update_aliens(aliens):
+    """Update the positions of all aliens in the fleet."""
+    aliens.update()
+
