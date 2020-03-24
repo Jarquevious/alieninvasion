@@ -66,7 +66,7 @@ def update_bullets(ai_settings, screen, ship, aliens, bullets):
             bullets.remove(bullet)
         print(len(bullets))
 
-    # collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+    collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
 def check_fleet_edges(ai_settings, aliens):
     """Return True in alien is at edge of screen."""
